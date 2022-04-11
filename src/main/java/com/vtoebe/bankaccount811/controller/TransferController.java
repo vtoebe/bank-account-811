@@ -25,9 +25,9 @@ public class TransferController {
     }
 
     @GetMapping("{accNumber}")
-    public Page<Transfer> getTransferByAccNumber(@PathVariable("accNumber") Integer accNumber,
-                                                 @RequestParam(required = false) int page,
-                                                 @RequestParam(required = false) int size
+    public Page<TransferResponse> getTransferByAccNumber(@PathVariable("accNumber") Integer accNumber,
+                                                 @RequestParam(required = false, defaultValue = "0") int page,
+                                                 @RequestParam(required = false, defaultValue = "10") int size
     ){
         return transferService.listAllTransferFromAccNumber(accNumber, page, size);
     }

@@ -1,5 +1,6 @@
 package com.vtoebe.bankaccount811.repository;
 
+import com.vtoebe.bankaccount811.dto.response.TransferResponse;
 import com.vtoebe.bankaccount811.model.Transfer;
 import com.vtoebe.bankaccount811.projection.TransferView;
 import org.springframework.data.domain.Page;
@@ -16,7 +17,7 @@ public interface TransferRepository extends JpaRepository<Transfer, Integer>,
 {
 
     @Query("select t from Transfer t where t.account.accNumber = :accNumber")
-    Page<Transfer> listAllTransferFromAccNumber(@Param("accNumber") Integer accNumber, Pageable pageable);
+    Page<TransferResponse> listAllTransferFromAccNumber(@Param("accNumber") Integer accNumber, Pageable pageable);
 
     List<TransferView> findAllByAccount_AccNumber(Integer accNumber);
 

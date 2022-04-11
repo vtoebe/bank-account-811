@@ -25,7 +25,6 @@ public class TransferResponse {
         this.account = new AccountResponse(transfer.getAccount());
         this.amount = transfer.getAmount();
         this.createdAt = transfer.getCreatedAt();
-        this.updatedAt = transfer.getCreatedAt();
     }
 
 }

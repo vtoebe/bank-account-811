@@ -37,7 +37,7 @@ public class TransferServiceImpl implements TransferService {
     }
 
     @Override
-    public Page<Transfer> listAllTransferFromAccNumber(Integer accNumber, int page, int size) {
+    public Page<TransferResponse> listAllTransferFromAccNumber(Integer accNumber, int page, int size) {
         PageRequest pageRequest = PageRequest.of(page, size);
         return transferRepository.listAllTransferFromAccNumber(accNumber, pageRequest);
     }
